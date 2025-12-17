@@ -1,0 +1,52 @@
+:root[data-theme='light'] {
+  --app-bg: #ffffff;
+  --app-bg-secondary: #fafafa;
+  /* Sunrise glow: warm top light → creamy white */
+  --app-page-bg: radial-gradient(1200px 800px at 50% 0%, rgba(170, 205, 195, 0.35) 0%, rgba(170, 205, 195, 0) 58%),
+    radial-gradient(900px 700px at 14% 12%, rgba(150, 175, 205, 0.26) 0%, rgba(150, 175, 205, 0) 60%),
+    linear-gradient(180deg, #f2f7f5 0%, #f7f9fb 55%, #ffffff 100%);
+  --app-text: #222;
+  --app-text-muted: #717171;
+  --app-border: #e6e6e6;
+}
+
+:root[data-theme='dark'] {
+  --app-bg: #0f1115;
+  --app-bg-secondary: #141824;
+  --app-page-bg: radial-gradient(1200px 800px at 15% 12%, rgba(255, 56, 92, 0.14) 0%, rgba(255, 56, 92, 0) 60%),
+    radial-gradient(900px 700px at 88% 20%, rgba(0, 132, 138, 0.12) 0%, rgba(0, 132, 138, 0) 62%),
+    linear-gradient(180deg, #0f1115 0%, #141824 100%);
+  --app-text: rgba(255, 255, 255, 0.92);
+  --app-text-muted: rgba(255, 255, 255, 0.68);
+  --app-border: #2a3142;
+}
+
+body {
+  background: var(--app-page-bg);
+  background-attachment: fixed;
+  color: var(--app-text);
+}
+
+a {
+  color: inherit;
+}
+
+/* Subtle paper-like grain to avoid flat, cheap feeling */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  mix-blend-mode: overlay;
+}
+
+/* Ensure main app stays above the texture layer */
+#root {
+  position: relative;
+  z-index: 1;
+}
