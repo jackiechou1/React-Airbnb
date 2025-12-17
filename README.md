@@ -1,11 +1,11 @@
-# React Airbnb（毕业设计）— 本地/线上可复现
+# React Airbnb租房旅游项目
 
 本项目包含：
 - 前端：React + Ant Design + 主题/中英切换
 - 后端：Koa2 + Prisma + PostgreSQL（注册/登录/鉴权）
 - 线上：可部署到 Vercel（前端 + `/api/auth/*` Serverless Functions）
 
-## 本地运行（Windows，小白流程）
+## 本地运行（Windows流程）
 
 ### 1）准备 PostgreSQL 数据库
 1. 确认 PostgreSQL 服务已启动
