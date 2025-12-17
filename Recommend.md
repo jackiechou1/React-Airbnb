@@ -1,20 +1,12 @@
 
-  - 你当前后端是 常驻 Koa 服务（server/src/index.js 用
-    app.listen），Vercel 的后端运行形态是 Serverless
-    Functions，不能按同样方式直接长期监听端口。
-  - 登录/注册依赖 PostgreSQL，Vercel 不自带持久化数据库；需要你
-    用外部托管 PG（Neon/Supabase/Railway）并配置 DATABASE_URL，
-    同时 cookie/跨域也要按线上域名调整。
 
-  如果你只是“毕业设计简单上线”，可行的两条路：
-
-  ## A）推荐上线方案（更像真实项目）
+  ## A）上线方案
 
   - 前端：继续部署到 Vercel
   - 后端：也部署到 Vercel Functions（把 Koa 改成 app.callback()    导出 handler，不用 listen）
   - 数据库：用 Neon/Supabase 的 Postgres（把 DATABASE_URL 配到 
     Vercel env）
-  - 这样上线后登录/注册、数据存储都是真实可用的
+  - 上线后登录/注册、数据存储都是真实可用的
 
 
   - 把后端的错误信息做成更友好的中文（现在很多是英文短句）     
@@ -27,8 +19,8 @@
     可复现）
 
 
-##
+## Todo
     
-  你接下来要做的是：在 Vercel 配置环境变量 DATABASE_URL、      
+  在 Vercel 配置环境变量 DATABASE_URL、      
   JWT_ACCESS_SECRET、JWT_REFRESH_SECRET（指向 Neon/Supabase 的 
   Postgres），部署后就能真正在线注册/登录并写入数据
