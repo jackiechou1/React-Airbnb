@@ -5,6 +5,19 @@ export const ItemWrapper = styled.li`
   width: ${(props) => props.itemwidth};
   box-sizing: border-box;
   padding: 8px;
+
+  @media (max-width: 1024px) {
+    width: 33.3333%;
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   .inner {
     background: ${(props) => (props.theme.mode === "dark" ? props.theme.background.secondary : props.theme.background.primary)};
     border: 1px solid ${(props) => props.theme.border.primaryColor};

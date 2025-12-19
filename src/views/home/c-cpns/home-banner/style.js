@@ -22,6 +22,18 @@ export const BannerWrapper = styled.div`
     display: block;
   }
 
+  @media (max-width: 768px) {
+    height: 280px;
+
+    .slide {
+      height: 280px;
+    }
+
+    img {
+      height: 280px;
+    }
+  }
+
   /* Sunrise glow overlay */
   &::before {
     content: "";

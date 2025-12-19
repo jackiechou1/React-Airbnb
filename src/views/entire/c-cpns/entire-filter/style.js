@@ -24,7 +24,24 @@ export const FilterWrapper = styled.div`
   }
 
   .price .control {
-    width: 220px;
+    width: min(220px, 70vw);
     padding: 0 6px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 12px 12px 0;
+
+    .bar {
+      padding: 12px 12px;
+    }
+
+    .item.price {
+      width: 100%;
+    }
+
+    .price .control {
+      width: 100%;
+      padding: 0;
+    }
   }
 `;

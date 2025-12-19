@@ -68,4 +68,12 @@ export const RightWrapper = styled.div`
     }
     ${(props) => props.theme.mixin.boxShadow}
   }
+
+  @media (max-width: 768px) {
+    margin-right: 12px;
+
+    .btns {
+      display: none;
+    }
+  }
 `;

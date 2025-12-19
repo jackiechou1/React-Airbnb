@@ -25,4 +25,15 @@ export const LeftWrapper = styled.div`
       background: ${(props) => props.theme.background.hover};
     }
   }
+
+  @media (max-width: 768px) {
+    .left {
+      margin-left: 12px;
+      gap: 10px;
+    }
+
+    .all-stays {
+      display: none;
+    }
+  }
 `;

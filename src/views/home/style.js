@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
   > .content {
-    width: 1032px;
+    width: 100%;
+    max-width: 1032px;
     margin: 0 auto;
-    padding: 28px 0 10px;
+    padding: 28px 16px 10px;
+    box-sizing: border-box;
   }
 
   .section {
@@ -21,6 +23,18 @@ export const HomeWrapper = styled.div`
         : "linear-gradient(180deg, rgba(230, 240, 234, 0.78) 0%, rgba(255, 255, 255, 0.82) 100%)"};
     box-shadow: ${(props) =>
       props.theme.mode === "dark" ? "0 10px 26px rgba(0, 0, 0, 0.35)" : "0 10px 26px rgba(0, 0, 0, 0.08)"};
+  }
+
+  @media (max-width: 768px) {
+    > .content {
+      padding-top: 18px;
+    }
+
+    .section {
+      margin-top: 14px;
+      padding: 14px 12px 10px;
+      border-radius: 16px;
+    }
   }
 
   /* 2) 山系自然轻户外森林感（低饱和自然绿） */

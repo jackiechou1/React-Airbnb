@@ -7,7 +7,8 @@ export const FooterWrapper = styled.div`
   color: ${(props) => props.theme.textColor.primaryColor};
 
   .wrapper {
-    width: 1080px;
+    width: 100%;
+    max-width: 1080px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 48px 24px;
@@ -15,9 +16,12 @@ export const FooterWrapper = styled.div`
 
   .service {
     display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 
     .item {
       flex: 1;
+      min-width: 160px;
 
       .name {
         margin-bottom: 16px;
@@ -46,5 +50,15 @@ export const FooterWrapper = styled.div`
     padding: 20px;
     color: ${(props) => props.theme.textColor.primaryColor};
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 32px 16px;
+    }
+
+    .service {
+      flex-direction: column;
+    }
   }
 `;

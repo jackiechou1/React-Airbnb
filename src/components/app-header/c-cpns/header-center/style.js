@@ -5,7 +5,7 @@ export const CenterWrapper = styled.div`
   justify-content: center;
 
   .keyword {
-    width: 320px;
+    width: min(320px, 46vw);
     border-radius: 999px;
   }
 
@@ -19,6 +19,23 @@ export const CenterWrapper = styled.div`
       background: ${(props) => (props.theme.mode === "dark" ? "#ff4d6d" : "#e31c5f")};
       border-color: ${(props) => (props.theme.mode === "dark" ? "#ff4d6d" : "#e31c5f")};
       color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+
+    .keyword {
+      width: min(240px, 46vw);
+    }
+
+    .search-btn {
+      padding: 0 10px;
+    }
+
+    /* hide button text, keep icon only */
+    .search-btn .anticon + span {
+      display: none;
     }
   }
 `;
